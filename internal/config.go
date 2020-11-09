@@ -2,8 +2,8 @@ package internal
 
 type Config struct {
 	Count    int
-	Width    int            `json:"cel_width"`
-	Height   int            `json:"cel_height"`
+	Width    int            `json:"cell_width"`
+	Height   int            `json:"cell_height"`
 	Leading  int            `json:"leading"`
 	Kerning  int            `json:"default_kerning"`
 	Advances map[string]int `json:"letter_width"`

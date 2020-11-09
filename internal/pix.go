@@ -2,6 +2,7 @@ package internal
 
 import (
 	"image"
+	_ "image/png"
 	"io"
 )
 
@@ -11,7 +12,6 @@ func ReadPix(stream io.Reader, c Config) ([]byte, error) {
 		return nil, err
 	}
 
-	// imgH := img.Bounds().Max.Y
 	result := make([]byte, 0)
 	for glyph := 0; glyph < c.Count; glyph++ {
 		cornerX := (glyph % 16) * c.Width

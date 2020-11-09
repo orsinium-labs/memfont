@@ -1,1 +1,1 @@
-statik -src assets -dest . -p embedded -include=*.ttf,*.json
+statik -src ./mem/dist -dest . -p embedded -include=*.png,*.json

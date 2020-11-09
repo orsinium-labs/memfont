@@ -23,8 +23,8 @@ func NewAssets() (*Assets, error) {
 	return &c, nil
 }
 
-func (c *Assets) OpenTTF(path string) (http.File, error) {
-	return c.fs.Open("/" + path + ".ttf")
+func (c *Assets) OpenPNG(path string) (http.File, error) {
+	return c.fs.Open("/" + path + "-sheet.png")
 }
 
 func (c *Assets) JSON(path string, target interface{}) error {

@@ -2,7 +2,6 @@ package internal
 
 import (
 	"image"
-	_ "image/png"
 	"strings"
 
 	"golang.org/x/image/font/basicfont"
