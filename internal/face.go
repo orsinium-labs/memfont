@@ -35,7 +35,7 @@ func NewFace(pix []byte, c Config) *Face {
 		Advance: c.Advance,
 		Width:   c.Width,
 		Height:  c.Height,
-		Ascent:  6,
+		Ascent:  c.Height - 2,
 		Descent: 2,
 		Mask:    mask,
 		Ranges: []basicfont.Range{
