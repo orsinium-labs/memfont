@@ -6,5 +6,5 @@ import (
 )
 
 func Prop56() (*text.Atlas, error) {
-	return internal.MemFont("prop56")
+	return internal.MemFont("mem-prop-5x6")
 }
