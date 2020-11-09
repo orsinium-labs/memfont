@@ -5,6 +5,7 @@ type Config struct {
 	Width    int            `json:"cell_width"`
 	Height   int            `json:"cell_height"`
 	Leading  int            `json:"leading"`
+	Descent  int            `json:"baseline"`
 	Kerning  int            `json:"default_kerning"`
 	Advances map[string]int `json:"letter_width"`
 	Advance  int            `json:"default_letter_width"`
