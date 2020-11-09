@@ -5,10 +5,12 @@ type Config struct {
 	Width    int            `json:"cell_width"`
 	Height   int            `json:"cell_height"`
 	Leading  int            `json:"leading"`
-	Descent  int            `json:"baseline"`
 	Kerning  int            `json:"default_kerning"`
 	Advances map[string]int `json:"letter_width"`
 	Advance  int            `json:"default_letter_width"`
+
+	// Descent is wrong in JSON files, so we set it explicitly
+	Descent int
 }
 
 func NewConfig(assets *Assets, path string) (Config, error) {

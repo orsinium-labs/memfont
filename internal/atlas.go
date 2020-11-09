@@ -7,7 +7,7 @@ import (
 	"github.com/faiface/pixel/text"
 )
 
-func MemFont(name string) (*text.Atlas, error) {
+func MemFont(name string, descent int) (*text.Atlas, error) {
 	assets, err := NewAssets()
 	if err != nil {
 		return nil, fmt.Errorf("cannot read assets: %v", err)
@@ -17,6 +17,7 @@ func MemFont(name string) (*text.Atlas, error) {
 	if err != nil {
 		return nil, fmt.Errorf("cannot read config: %v", err)
 	}
+	config.Descent = descent
 
 	stream, err := assets.OpenPNG(name)
 	if err != nil {
