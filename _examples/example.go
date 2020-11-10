@@ -25,7 +25,6 @@ func run() {
 		panic(err)
 	}
 	txt := text.New(pixel.V(50, 500), atlas)
-
 	txt.Color = color.RGBA{0xff, 0xff, 0xff, 0xff}
 
 	typed := "Hello, world!\n"
