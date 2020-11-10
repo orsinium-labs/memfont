@@ -22,6 +22,8 @@ github.com/mattn/go-isatty v0.0.12 h1:wuysRhFDzyxgEmMf5xjvJ2M9dZoWAXNNr5LSBS7uHX
 github.com/mattn/go-isatty v0.0.12/go.mod h1:cbi8OIDigv2wuxKPP5vlRcQ1OAZbq2CE4Kysco4FUpU=
 github.com/orsinium-labs/memfont v0.0.0-20201109144646-065fae742336 h1:vOCcUu3x9XSoPWT1pQjQ6lInKgox+F0QHVbiLQCXgPE=
 github.com/orsinium-labs/memfont v0.0.0-20201109144646-065fae742336/go.mod h1:d9tC70SWldguQH3j6Wn0XbRZlz6N3S0zMOv3lZGKwVI=
+github.com/orsinium-labs/memfont v0.0.0-20201110075107-13cbcd8038b2 h1:VHsoEFfsjxrNE3OsnXSUG232v9mSW9dQUgQpyFU/MT4=
+github.com/orsinium-labs/memfont v0.0.0-20201110075107-13cbcd8038b2/go.mod h1:d9tC70SWldguQH3j6Wn0XbRZlz6N3S0zMOv3lZGKwVI=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
