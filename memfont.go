@@ -5,6 +5,14 @@ import (
 	"golang.org/x/image/font"
 )
 
+func Mono3x3() (font.Face, error) {
+	return internal.MemFont("mem-mono-3x3")
+}
+
+func Mono4x4() (font.Face, error) {
+	return internal.MemFont("mem-mono-4x4")
+}
+
 func Prop3x5() (font.Face, error) {
 	return internal.MemFont("mem-prop-3x5")
 }

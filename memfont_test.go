@@ -14,10 +14,12 @@ type F = func() (font.Face, error)
 
 func funcs() map[string]F {
 	return map[string]F{
-		"3x5": memfont.Prop3x5,
-		"4x4": memfont.Prop4x4,
-		"5x5": memfont.Prop5x5,
-		"5x6": memfont.Prop5x6,
+		"m-3x3": memfont.Mono3x3,
+		"m-4x4": memfont.Mono4x4,
+		"p-3x5": memfont.Prop3x5,
+		"p-4x4": memfont.Prop4x4,
+		"p-5x5": memfont.Prop5x5,
+		"p-5x6": memfont.Prop5x6,
 	}
 
 }
