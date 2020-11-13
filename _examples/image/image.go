@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	width  = 72
+	width  = 100
 	height = 8
 )
 
@@ -22,14 +22,16 @@ func main() {
 		log.Fatalf("NewFace: %v", err)
 	}
 
-	img := image.NewGray(image.Rect(0, 0, width, height))
+	img := image.NewGray(image.Rect(0, 0, width, height*2+1))
 	d := font.Drawer{
 		Dst:  img,
 		Src:  image.White,
 		Face: face,
 		Dot:  fixed.P(1, height),
 	}
-	d.DrawString("hello world")
+	d.DrawString("The quick brown fox")
+	d.Dot = fixed.P(1, height*2)
+	d.DrawString("jumps over the lazy dog")
 
 	stream, err := os.Create("image.png")
 	if err != nil {
