@@ -150,3 +150,35 @@ func Test_5x6_p(t *testing.T) {
 	}
 	is.Equal(pix, exp, reprPix(pix, 5, 6))
 }
+
+func Test_5x6_iw(t *testing.T) {
+	is := require.New(t)
+	face, err := MemFont("mem-prop-5x6")
+	is.Nil(err)
+	pix := draw(face, "iw")
+	exp := []uint8{
+		0, 0, 0, 0, 0,
+		X, 0, X, 0, X,
+		X, 0, X, 0, X,
+		X, 0, X, 0, X,
+		X, 0, X, X, X,
+		0, 0, 0, 0, 0,
+	}
+	is.Equal(pix, exp, reprPix(pix, 5, 6))
+}
+
+func Test_5x6_pw(t *testing.T) {
+	is := require.New(t)
+	face, err := MemFont("mem-prop-5x6")
+	is.Nil(err)
+	pix := draw(face, "pw")
+	exp := []uint8{
+		0, 0, 0, 0, 0,
+		X, X, X, 0, X,
+		X, 0, X, 0, X,
+		X, 0, X, 0, X,
+		X, X, X, 0, X,
+		X, 0, 0, 0, 0,
+	}
+	is.Equal(pix, exp, reprPix(pix, 5, 6))
+}
