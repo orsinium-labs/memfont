@@ -15,11 +15,11 @@ func Test_4x4_space(t *testing.T) {
 	is.Equal(pix, exp)
 }
 
-func reprPix(pix []uint8) string {
+func reprPix(pix []uint8, w, h int) string {
 	s := ""
-	for i := 0; i < 4; i++ {
-		for j := 0; j < 4; j++ {
-			if pix[i*4+j] == 0 {
+	for i := 0; i < h; i++ {
+		for j := 0; j < w; j++ {
+			if pix[i*w+j] == 0 {
 				s += "."
 			} else {
 				s += "X"
@@ -41,7 +41,7 @@ func Test_4x4_a(t *testing.T) {
 		0, X, 0, X,
 		0, 0, X, X,
 	}
-	is.Equal(pix, exp, reprPix(pix))
+	is.Equal(pix, exp, reprPix(pix, 4, 4))
 }
 
 func Test_4x4_A(t *testing.T) {
@@ -55,5 +55,5 @@ func Test_4x4_A(t *testing.T) {
 		0, X, X, X,
 		0, X, 0, X,
 	}
-	is.Equal(pix, exp, reprPix(pix))
+	is.Equal(pix, exp, reprPix(pix, 4, 4))
 }
