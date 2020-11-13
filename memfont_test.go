@@ -49,8 +49,8 @@ func TestSizeRange(t *testing.T) {
 
 				is.Greater(w, 2.0)
 				is.Greater(h, 2.0)
-				is.Less(w, 8.0)
-				is.Less(h, 8.0)
+				is.Less(w, 9.0)
+				is.Less(h, 9.0)
 			})
 		}
 	}
