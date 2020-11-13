@@ -13,4 +13,4 @@ See [_examples](./_examples/) directory.
 go get github.com/orsinium-labs/memfont
 ```
 
-![example](./_examples/image/result.png)
+<img src="./_examples/image/result.png)" style="min-width:50%" />
