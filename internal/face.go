@@ -37,6 +37,7 @@ func NewFace(pix []byte, c Config) *Face {
 		Height:  c.Height,
 		Ascent:  c.Height - c.Baseline,
 		Descent: c.Baseline,
+		Left:    -1,
 		Mask:    mask,
 		Ranges: []basicfont.Range{
 			{Low: rune(0), High: rune(c.Count), Offset: 0},

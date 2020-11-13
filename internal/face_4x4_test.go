@@ -37,9 +37,9 @@ func Test_4x4_a(t *testing.T) {
 	pix := draw(face, "a")
 	exp := []uint8{
 		0, 0, 0, 0,
-		0, 0, X, X,
-		0, X, 0, X,
-		0, 0, X, X,
+		0, X, X, 0,
+		X, 0, X, 0,
+		0, X, X, 0,
 	}
 	is.Equal(pix, exp, reprPix(pix, 4, 4))
 }
@@ -50,10 +50,10 @@ func Test_4x4_A(t *testing.T) {
 	is.Nil(err)
 	pix := draw(face, "A")
 	exp := []uint8{
-		0, 0, X, 0,
-		0, X, 0, X,
-		0, X, X, X,
-		0, X, 0, X,
+		0, X, 0, 0,
+		X, 0, X, 0,
+		X, X, X, 0,
+		X, 0, X, 0,
 	}
 	is.Equal(pix, exp, reprPix(pix, 4, 4))
 }

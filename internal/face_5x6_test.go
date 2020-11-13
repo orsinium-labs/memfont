@@ -24,7 +24,7 @@ func Test_5x6_Bounds(t *testing.T) {
 
 	dot := fixed.Point26_6{X: 0, Y: 0}
 	dr, mask, maskp, _, _ := face.Glyph(dot, 'a')
-	is.Equal(dr.Min.X, 0)
+	is.Equal(dr.Min.X, -1)
 	is.Equal(maskp.X, 0)
 	is.Equal(maskp.Y, 97*8)
 	is.Equal(mask.Bounds().Min.X, 0)
@@ -63,10 +63,10 @@ func Test_5x6_a(t *testing.T) {
 	exp := []uint8{
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
-		0, 0, X, X, 0,
-		0, X, 0, X, 0,
-		0, X, 0, X, 0,
-		0, 0, X, X, 0,
+		0, X, X, 0, 0,
+		X, 0, X, 0, 0,
+		X, 0, X, 0, 0,
+		0, X, X, 0, 0,
 	}
 	is.Equal(pix, exp)
 }
@@ -78,11 +78,11 @@ func Test_5x6_0(t *testing.T) {
 	pix := draw(face, "0")
 	exp := []uint8{
 		0, 0, 0, 0, 0,
-		0, 0, X, X, 0,
-		0, X, 0, X, 0,
-		0, X, 0, X, 0,
-		0, X, 0, X, 0,
 		0, X, X, 0, 0,
+		X, 0, X, 0, 0,
+		X, 0, X, 0, 0,
+		X, 0, X, 0, 0,
+		X, X, 0, 0, 0,
 	}
 	is.Equal(pix, exp)
 }
@@ -95,10 +95,42 @@ func Test_5x6_z(t *testing.T) {
 	exp := []uint8{
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
+		X, X, 0, 0, 0,
+		0, X, 0, 0, 0,
+		0, X, 0, 0, 0,
 		0, X, X, 0, 0,
-		0, 0, X, 0, 0,
-		0, 0, X, 0, 0,
-		0, 0, X, X, 0,
 	}
 	is.Equal(pix, exp)
+}
+
+func Test_5x6_w(t *testing.T) {
+	is := require.New(t)
+	face, err := makeFace("mem-prop-5x6")
+	is.Nil(err)
+	pix := draw(face, "w")
+	exp := []uint8{
+		0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0,
+		X, 0, X, 0, X,
+		X, 0, X, 0, X,
+		X, 0, X, 0, X,
+		X, X, X, X, X,
+	}
+	is.Equal(pix, exp, reprPix(pix, 5, 6))
+}
+
+func Test_5x6_W(t *testing.T) {
+	is := require.New(t)
+	face, err := makeFace("mem-prop-5x6")
+	is.Nil(err)
+	pix := draw(face, "W")
+	exp := []uint8{
+		0, 0, 0, 0, 0,
+		X, 0, 0, 0, X,
+		X, 0, X, 0, X,
+		X, 0, X, 0, X,
+		X, 0, X, 0, X,
+		X, X, X, X, X,
+	}
+	is.Equal(pix, exp, reprPix(pix, 5, 6))
 }
