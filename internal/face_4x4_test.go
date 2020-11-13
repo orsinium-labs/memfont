@@ -50,10 +50,10 @@ func Test_4x4_A(t *testing.T) {
 	is.Nil(err)
 	pix := draw(face, "A")
 	exp := []uint8{
-		0, X, 0, 0,
-		X, 0, X, 0,
-		X, X, X, 0,
-		X, 0, X, 0,
+		0, 0, X, 0,
+		0, X, 0, X,
+		0, X, X, X,
+		0, X, 0, X,
 	}
 	is.Equal(pix, exp, reprPix(pix))
 }

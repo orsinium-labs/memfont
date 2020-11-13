@@ -26,7 +26,6 @@ func makeFace(name string, descent int) (*Face, error) {
 	if err != nil {
 		return nil, fmt.Errorf("cannot read config: %v", err)
 	}
-	config.Descent = descent
 
 	stream, err := assets.OpenPNG(name)
 	if err != nil {
