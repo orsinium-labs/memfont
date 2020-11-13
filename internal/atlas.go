@@ -7,8 +7,8 @@ import (
 	"github.com/faiface/pixel/text"
 )
 
-func MemFont(name string, descent int) (*text.Atlas, error) {
-	face, err := makeFace(name, descent)
+func MemFont(name string) (*text.Atlas, error) {
+	face, err := makeFace(name)
 	if err != nil {
 		return nil, err
 	}
@@ -16,7 +16,7 @@ func MemFont(name string, descent int) (*text.Atlas, error) {
 	return atlas, nil
 }
 
-func makeFace(name string, descent int) (*Face, error) {
+func makeFace(name string) (*Face, error) {
 	assets, err := NewAssets()
 	if err != nil {
 		return nil, fmt.Errorf("cannot read assets: %v", err)

@@ -13,7 +13,7 @@ const X = uint8(0xFF)
 
 func Test_5x6_Bounds(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-5x6", 2)
+	face, err := makeFace("mem-prop-5x6")
 	is.Nil(err)
 
 	b, _, _ := face.GlyphBounds('a')
@@ -48,7 +48,7 @@ func draw(face *Face, text string) []uint8 {
 
 func Test_5x6_space(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-5x6", 2)
+	face, err := makeFace("mem-prop-5x6")
 	is.Nil(err)
 	pix := draw(face, " ")
 	exp := make([]uint8, (face.Width-2)*(face.Height-2))
@@ -57,7 +57,7 @@ func Test_5x6_space(t *testing.T) {
 
 func Test_5x6_a(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-5x6", 2)
+	face, err := makeFace("mem-prop-5x6")
 	is.Nil(err)
 	pix := draw(face, "a")
 	exp := []uint8{
@@ -73,7 +73,7 @@ func Test_5x6_a(t *testing.T) {
 
 func Test_5x6_0(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-5x6", 2)
+	face, err := makeFace("mem-prop-5x6")
 	is.Nil(err)
 	pix := draw(face, "0")
 	exp := []uint8{
@@ -89,7 +89,7 @@ func Test_5x6_0(t *testing.T) {
 
 func Test_5x6_z(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-5x6", 2)
+	face, err := makeFace("mem-prop-5x6")
 	is.Nil(err)
 	pix := draw(face, "z")
 	exp := []uint8{

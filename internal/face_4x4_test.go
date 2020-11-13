@@ -8,7 +8,7 @@ import (
 
 func Test_4x4_space(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-4x4", 0)
+	face, err := makeFace("mem-prop-4x4")
 	is.Nil(err)
 	pix := draw(face, " ")
 	exp := make([]uint8, (face.Width-2)*(face.Height-2))
@@ -32,7 +32,7 @@ func reprPix(pix []uint8) string {
 
 func Test_4x4_a(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-4x4", 2)
+	face, err := makeFace("mem-prop-4x4")
 	is.Nil(err)
 	pix := draw(face, "a")
 	exp := []uint8{
@@ -46,7 +46,7 @@ func Test_4x4_a(t *testing.T) {
 
 func Test_4x4_A(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-4x4", 2)
+	face, err := makeFace("mem-prop-4x4")
 	is.Nil(err)
 	pix := draw(face, "A")
 	exp := []uint8{
