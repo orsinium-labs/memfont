@@ -24,11 +24,11 @@ func run() {
 	if err != nil {
 		panic(err)
 	}
-	atals := text.NewAtlas(face, text.ASCII)
+	atlas := text.NewAtlas(face, text.ASCII)
 	txt := text.New(pixel.V(50, 500), atlas)
 	txt.Color = color.RGBA{0xff, 0xff, 0xff, 0xff}
 
-	typed := "Hello, world!\n"
+	typed := "Hello, world!\n(type something)\n"
 	for !win.Closed() {
 		if typed != "" {
 			_, err = txt.WriteString(typed)

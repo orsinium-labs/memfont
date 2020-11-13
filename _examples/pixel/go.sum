@@ -24,6 +24,8 @@ github.com/orsinium-labs/memfont v0.0.0-20201109144646-065fae742336 h1:vOCcUu3x9
 github.com/orsinium-labs/memfont v0.0.0-20201109144646-065fae742336/go.mod h1:d9tC70SWldguQH3j6Wn0XbRZlz6N3S0zMOv3lZGKwVI=
 github.com/orsinium-labs/memfont v0.0.0-20201110075107-13cbcd8038b2 h1:VHsoEFfsjxrNE3OsnXSUG232v9mSW9dQUgQpyFU/MT4=
 github.com/orsinium-labs/memfont v0.0.0-20201110075107-13cbcd8038b2/go.mod h1:d9tC70SWldguQH3j6Wn0XbRZlz6N3S0zMOv3lZGKwVI=
+github.com/orsinium-labs/memfont v0.0.0-20201113125530-1fc18c18881e h1:VfZbNpwe4z7yXWRxjqysQlKGb+GLqz4YniNYsIwNpas=
+github.com/orsinium-labs/memfont v0.0.0-20201113125530-1fc18c18881e/go.mod h1:HkyJiGdjqNznpu0sv9VwWq0bp8EVQL2WtPN8SlYvjgo=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
