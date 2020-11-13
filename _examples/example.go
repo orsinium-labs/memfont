@@ -20,10 +20,11 @@ func run() {
 		panic(err)
 	}
 
-	atlas, err := memfont.Prop5x6()
+	face, err := memfont.Prop5x6()
 	if err != nil {
 		panic(err)
 	}
+	atals := text.NewAtlas(face, text.ASCII)
 	txt := text.New(pixel.V(50, 500), atlas)
 	txt.Color = color.RGBA{0xff, 0xff, 0xff, 0xff}
 

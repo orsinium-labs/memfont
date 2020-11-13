@@ -3,20 +3,9 @@ package internal
 import (
 	"errors"
 	"fmt"
-
-	"github.com/faiface/pixel/text"
 )
 
-func MemFont(name string) (*text.Atlas, error) {
-	face, err := makeFace(name)
-	if err != nil {
-		return nil, err
-	}
-	atlas := text.NewAtlas(face, text.ASCII)
-	return atlas, nil
-}
-
-func makeFace(name string) (*Face, error) {
+func MemFont(name string) (*Face, error) {
 	assets, err := NewAssets()
 	if err != nil {
 		return nil, fmt.Errorf("cannot read assets: %v", err)

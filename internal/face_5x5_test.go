@@ -8,7 +8,7 @@ import (
 
 func Test_5x5_space(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-5x5")
+	face, err := MemFont("mem-prop-5x5")
 	is.Nil(err)
 	pix := draw(face, " ")
 	exp := make([]uint8, (face.Width-2)*(face.Height-2))
@@ -17,7 +17,7 @@ func Test_5x5_space(t *testing.T) {
 
 func Test_5x5_a(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-5x5")
+	face, err := MemFont("mem-prop-5x5")
 	is.Nil(err)
 	pix := draw(face, "a")
 	exp := []uint8{
@@ -32,7 +32,7 @@ func Test_5x5_a(t *testing.T) {
 
 func Test_5x5_A(t *testing.T) {
 	is := require.New(t)
-	face, err := makeFace("mem-prop-5x5")
+	face, err := MemFont("mem-prop-5x5")
 	is.Nil(err)
 	pix := draw(face, "A")
 	exp := []uint8{

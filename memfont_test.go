@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/faiface/pixel/text"
 	"github.com/orsinium-labs/memfont"
 	"github.com/stretchr/testify/require"
+	"golang.org/x/image/font"
+	"golang.org/x/image/math/fixed"
 )
 
-type F = func() (*text.Atlas, error)
+type F = func() (font.Face, error)
 
 func funcs() map[string]F {
 	return map[string]F{
@@ -26,8 +27,8 @@ func TestNoErrors(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 			is := require.New(t)
-			atlas, err := f()
-			is.NotNil(atlas)
+			face, err := f()
+			is.NotNil(face)
 			is.Nil(err)
 		})
 	}
@@ -40,17 +41,17 @@ func TestSizeRange(t *testing.T) {
 			t.Run(name, func(t *testing.T) {
 				t.Parallel()
 				is := require.New(t)
-				atlas, err := f()
+				face, err := f()
 				is.Nil(err)
-				is.True(atlas.Contains(glyph))
-				g := atlas.Glyph(glyph)
-				w := g.Frame.W()
-				h := g.Frame.H()
+				dr, _, _, _, ok := face.Glyph(fixed.Point26_6{}, glyph)
+				is.True(ok)
+				w := dr.Dx()
+				h := dr.Dy()
 
-				is.Greater(w, 2.0)
-				is.Greater(h, 2.0)
-				is.Less(w, 9.0)
-				is.Less(h, 9.0)
+				is.Greater(w, 2)
+				is.Greater(h, 2)
+				is.Less(w, 9)
+				is.Less(h, 9)
 			})
 		}
 	}
