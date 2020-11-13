@@ -16,6 +16,6 @@ func NewConfig(assets *Assets, path string) (Config, error) {
 	err := assets.JSON(path, &c)
 	c.Width += 2
 	c.Height += 2
-	c.Baseline += 1
+	c.Baseline = 1
 	return c, err
 }
