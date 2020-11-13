@@ -33,7 +33,7 @@ func Test_5x6_Bounds(t *testing.T) {
 	is.Equal(mask.Bounds().Max.Y, 64*32)
 }
 
-func draw(is *require.Assertions, face *Face, text string) []uint8 {
+func draw(face *Face, text string) []uint8 {
 	dst := image.NewGray(image.Rect(0, 0, face.Width-2, face.Height-2))
 	d := font.Drawer{
 		Dst:  dst,
@@ -50,7 +50,7 @@ func Test_5x6_space(t *testing.T) {
 	is := require.New(t)
 	face, err := makeFace("mem-prop-5x6", 2)
 	is.Nil(err)
-	pix := draw(is, face, " ")
+	pix := draw(face, " ")
 	exp := make([]uint8, (face.Width-2)*(face.Height-2))
 	is.Equal(pix, exp)
 }
@@ -59,7 +59,7 @@ func Test_5x6_a(t *testing.T) {
 	is := require.New(t)
 	face, err := makeFace("mem-prop-5x6", 2)
 	is.Nil(err)
-	pix := draw(is, face, "a")
+	pix := draw(face, "a")
 	exp := []uint8{
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,
@@ -75,7 +75,7 @@ func Test_5x6_0(t *testing.T) {
 	is := require.New(t)
 	face, err := makeFace("mem-prop-5x6", 2)
 	is.Nil(err)
-	pix := draw(is, face, "0")
+	pix := draw(face, "0")
 	exp := []uint8{
 		0, 0, 0, 0, 0,
 		0, 0, X, X, 0,
@@ -91,7 +91,7 @@ func Test_5x6_z(t *testing.T) {
 	is := require.New(t)
 	face, err := makeFace("mem-prop-5x6", 2)
 	is.Nil(err)
-	pix := draw(is, face, "z")
+	pix := draw(face, "z")
 	exp := []uint8{
 		0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0,

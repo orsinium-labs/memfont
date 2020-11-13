@@ -27,7 +27,7 @@ func (f *Face) GlyphBounds(r rune) (bounds fixed.Rectangle26_6, advance fixed.In
 
 func NewFace(pix []byte, c Config) *Face {
 	mask := &image.Alpha{
-		Stride: 7,
+		Stride: c.Width,
 		Rect:   image.Rectangle{Max: image.Point{c.Width, 256 * c.Height}},
 		Pix:    pix,
 	}
